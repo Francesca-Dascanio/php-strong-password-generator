@@ -1,5 +1,7 @@
+
 <!-- Funzione per creare password -->
 <?php
+
     function getPassword($passwordLength) {
         $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?%&_-+=@'#\<>.?/";
         $randomString = '';
@@ -9,7 +11,7 @@
             $randomString .= $characters[$index];
         }
     
-        return 'La tua nuova password sicurissima è: '.$randomString;
+        return $randomString;
 
     }
 ?>

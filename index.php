@@ -1,3 +1,8 @@
+<!-- Variabile per prendere valore dell'input inserito dall'utente -->
+<!-- <?php 
+    $passwordLength = $_GET['password-length'];
+    ?> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,25 +22,18 @@
                 <label for="password-length">Scegli la lunghezza della tua password (minimo 1 - massimo 20):</label>
                 <input type="number" id="password-length" name="password-length" min="1" max="20">
             </form>
-            <div>
-                Lunghezza della password: 
-                <?php
-                    include __DIR__ . '/partials/variables.php';
-
-                    if ($passwordLength == 'undefined') {
-                        '';
+            <!-- <?php
+                    if ($passwordLength > 1) {
+                        header('Location: passwordResult.php'); 
                     }
                     else {
-                        echo $passwordLength;
-                    }  
+                        // Nulla
+                    }
+                ?> -->
+                <?php 
+                    session_start();
+                    $_SESSION['length'] = $passwordLength;
                 ?>
-            </div>
-            <div>
-                <?php
-                    include __DIR__ . '/partials/functions.php';
-                    echo getPassword($passwordLength);
-                ?>
-            </div>
         </main>
     </body>
 </html>
