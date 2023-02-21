@@ -1,23 +1,3 @@
-<!-- Creare un form che invii in GET la lunghezza della password. -->
-<!-- <?php 
-    $passwordLength = $_GET['password-length'];
-?> -->
-
-<!-- Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all'utente. -->
-<?php
-    function getName($passwordLength) {
-        $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?%&_-+=@'#\<>.?/";
-        $randomString = '';
-    
-        for ($i = 0; $i < $passwordLength; $i++) {
-            $index = rand(0, strlen($characters) - 1);
-            $randomString .= $characters[$index];
-        }
-    
-        return 'La tua nuova password sicurissima è: '.$randomString;
-
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +20,8 @@
             <div>
                 Lunghezza della password: 
                 <?php
+                    include __DIR__ . '/partials/variables.php';
+
                     if ($passwordLength == 'undefined') {
                         '';
                     }
@@ -50,7 +32,8 @@
             </div>
             <div>
                 <?php
-                    echo getName($passwordLength);
+                    include __DIR__ . '/partials/functions.php';
+                    echo getPassword($passwordLength);
                 ?>
             </div>
         </main>
