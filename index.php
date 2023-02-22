@@ -1,6 +1,7 @@
 <!-- Variabile per prendere valore dell'input inserito dall'utente -->
 <!-- <?php 
     $passwordLength = $_GET['password-length'];
+    session_start();
     ?> -->
 
 
@@ -31,7 +32,7 @@
                     }
                 ?> -->
                 <?php 
-                    session_start();
+                    
                     $_SESSION['length'] = $passwordLength;
                 ?>
         </main>

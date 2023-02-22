@@ -1,5 +1,7 @@
-
-
+<?php 
+    session_start();
+    include __DIR__ .'/partials/functions.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +20,9 @@
             <div>
                 La tua sicurissima password è:
                 <?php
-                    include __DIR__ .'/partials/functions.php';
-                    session_start();
-                    echo getPassword($_SESSION['length']);
                     
-                     
+                    echo getPassword($_SESSION['length']);
+                      
                 ?>
             </div>
         </main>
